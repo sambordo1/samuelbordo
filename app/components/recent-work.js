@@ -8,30 +8,34 @@ export default class RecentWorkComponent extends Component {
   projects = [
     {
       title: 'Blue Green Deployment with Cloud Infrastructure',
-      screenshot: 'bluegreen.png'
+      screenshot: 'bluegreen.png',
+      route: 'projects.blue-green'
     },
     {
       title: 'Implementing E2E Test Suite',
-      screenshot: 'e2e.png'
+      screenshot: 'e2e.png',
+      route: 'projects.e2e'
     },
     {
       title: 'Observability Stack',
-      screenshot: 'ollystack.png'
+      screenshot: 'ollystack.png',
+      route: 'projects.observability'
     },
     {
       title: 'Cloud API Development',
-      screenshot: 'api.png'
+      screenshot: 'api.png',
+      route: 'projects.cloud-api'
     },
     {
       title: 'Load Testing with Artillery',
-      screenshot: 'artillery.png'
-    }
+      screenshot: 'artillery.png',
+      route: 'projects.load-testing'
+    },
   ];
 
   @action
-  goToProject(title) {
-    // Example: transition to a dynamic route like /projects/:title
-    this.router.transitionTo('projects', title);
+  goToProject(project) {
+    // Instead of passing 'title', we pass the route name
+    this.router.transitionTo(project.route);
   }
 }
-

@@ -7,5 +7,11 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('projects', { path: '/projects/:title' });
+  this.route('projects', function () {
+    this.route('blue-green');
+    this.route('e2e');
+    this.route('observability');
+    this.route('cloud-api');
+    this.route('load-testing');
+  });
 });
