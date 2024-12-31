@@ -1,0 +1,14 @@
+<section class="testimonials-section">
+  <h2>Testimonials</h2>
+  <div class="testimonials-grid">
+    {{#each this.testimonials as |testimonial|}}
+      <div class="testimonial-card">
+        <img src={{testimonial.imageUrl}} alt={{testimonial.name}} />
+        <p>{{testimonial.text}}</p>
+        <strong>- {{testimonial.name}}</strong>
+        <br>
+        <a href={{testimonial.link}} target="_blank" rel="noopener noreferrer">taken from LinkedIn</a>
+      </div>
+    {{/each}}
+  </div>
+</section>

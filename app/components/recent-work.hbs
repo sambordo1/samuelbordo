@@ -1,0 +1,24 @@
+<section class="recent-work">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    {{#each this.projects as |project|}}
+      {{!-- template-lint-disable no-invalid-interactive --}}
+      <div 
+        class="project-card"
+        {{on "click" (fn this.goToProject project.title)}}
+      >
+        {{!-- Project Screenshot --}}
+        <img
+          src={{project.screenshot}}
+          alt="Screenshot of {{project.title}}"
+          class="project-img"
+        />
+
+        {{!-- Hover Overlay --}}
+        <div class="project-overlay">
+          <h3>{{project.title}}</h3>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>

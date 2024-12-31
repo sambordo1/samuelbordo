@@ -1,1 +1,294 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+/* Global reset or general styling across the site */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #0b2805; /* default dark green (or #333) */
+  }
+/* 
+---------------------
+TOP SECTION
+--------------------- 
+*/
+.top-section {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 4rem 1rem;
+    border: none;
+}
+.top-section h1 {
+    color: #0b2805;
+    font-size: 3rem;      
+    font-weight: bold;    
+    margin: 0 0 1rem;     /* Space below the heading */
+}
+.top-section h2 {
+    font-size: 2.0rem;
+    font-weight: normal;  
+    color: #777;         
+    margin: 0 0 2rem;
+}
+.top-section h3 {
+    font-size: 1.3rem;
+    font-weight: normal;  
+    color: #777;         
+    margin: 2rem 0 0 2rem;
+}
+.top-section .profile-pic img {
+    border-radius: 50%;
+    max-width: 200px;
+}
+/* 
+---------------------
+INTRO SECTION
+--------------------- 
+*/
+.intro-section {
+    /* If you want the *container* to have the same background as the top section,
+       and the columns themselves to be white, set the container's background to
+       match the top section. If your top section is #fff, you can do: */
+    background-color: #0b2805; 
+    padding: 4rem 1rem; 
+  }
+  
+  /* Title "My Experience" */
+  .intro-section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 0 0 1rem;
+    font-weight: 700;
+    /* If you want the heading text to be dark green */
+    color: #f5f5f5;
+  }
+  
+  /* Summary paragraph under the title */
+  .intro-summary {
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    /* Dark green text */
+    color: #f5f5f5;
+  }
+  
+  /* ===== Grid of 4 Columns ===== */
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem; /* Now we add some space between columns */
+  }
+  
+  /* ===== Each Column (Card) ===== */
+  .experience-col {
+    background-color: #fff;       /* White background for the column */
+    color: #0b2805;               /* Dark green text */
+    border: 1px solid #ddd;       /* Optional subtle border to define edges */
+    border-radius: 4px;           /* Slight rounding, optional */
+    padding: 1.5rem;              /* More padding inside each column */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  /* More space between each "section" (heading, paragraph, list) */
+  .experience-col h3,
+  .experience-col p,
+  .experience-col ul {
+    margin-bottom: 1rem; 
+  }
+  
+  .experience-col h3 {
+    font-size: 1.4rem;
+    margin-top: 0; /* remove top margin so it doesn't push down */
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .experience-col p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  /* Unordered list of technologies */
+  .experience-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* or center if you prefer */
+    /* If you prefer more spacing between list items: */
+  }
+  
+  .experience-col li {
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-col strong {
+    font-weight: 600;
+  }
+
+  .bold-list {
+    font-weight: 600;
+  }
+  
+  /* ===== Icon Above Each Column ===== */
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .icon-wrapper img {
+    width: 80px;            /* Increase size for bigger icon */
+    height: 80px;
+    border-radius: 50%;     /* Make it circular */
+    object-fit: cover;      /* Ensures the image scales/crops nicely */
+  }
+  /* Green line between the paragraph and columns */
+.green-divider {
+    width: 80%;                /* How wide the line should be */
+    margin: 2rem auto 3rem;       /* Center it horizontally, give space below (and/or above) */
+    border: 0;                 /* Remove default border styling of <hr> */
+    height: 2px;               /* The thickness of the line */
+    background-color: #0b2805; /* The green color you want (dark green) */
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr; /* single column on smaller screens */
+    }
+  }
+  
+ /* 
+---------------------
+RECENT WORK SECTION
+--------------------- 
+*/ 
+.recent-work {
+    background-color: #f5f5f5; /* match top-section’s background */
+    color: #0b2805;           /* dark green text */
+    padding: 4rem 1rem;       /* give it more vertical space to breathe */
+    margin: 0;                /* so it stretches full width */
+  }
+  .recent-work h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #0b2805;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; 
+    /* Optionally, add some max-width: 1200px and margin: 0 auto if you want a narrower content area */
+  }
+  .project-card {
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center; /* optional, or do your own layout */
+  }
+  
+  /* Make the screenshot scale nicely */
+  .project-img {
+    width: 100%;
+    height: 300px; /* or auto */
+    object-fit: cover; /* maintain aspect ratio, cropping edges if needed */
+    display: block;    /* remove inline spacing below img */
+  }
+  
+  /* If you still want the overlay effect on hover: */
+  .project-overlay {
+    opacity: 0;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    /* center overlay content */
+    display: flex;      
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+  }
+  .project-overlay h3 {
+    background-color: rgba(0, 0, 0, 0.6); /* dark transparent overlay */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px; /* optional rounding */
+    display: inline-block;
+  }
+  
+  
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }  
+
+/* 
+---------------------
+Testimonials SECTION
+--------------------- 
+*/
+.testimonials-section {
+    padding: 2rem 1rem;
+    background-color: #fefefe;
+    text-align: center;
+  }
+  
+  .testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .testimonial-card {
+    max-width: 300px;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  .testimonial-card img {
+    border-radius: 50%;
+    max-width: 80px;
+  }
+/* 
+---------------------
+CONTACT SECTION
+--------------------- 
+*/ 
+.contact-me {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .contact-icons {
+    display: inline-flex;
+    gap: 1rem;
+  }
+  
+  .icon-circle {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .icon-circle:hover {
+    background-color: #555;
+  }
+  

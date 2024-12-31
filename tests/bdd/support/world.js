@@ -10,11 +10,11 @@ class CustomWorld {
 
 setWorldConstructor(CustomWorld);
 
-Before(async function() {
+Before(async function () {
   this.browser = await chromium.launch({ headless: true });
   this.page = await this.browser.newPage();
 });
 
-After(async function() {
+After(async function () {
   await this.browser.close();
 });
