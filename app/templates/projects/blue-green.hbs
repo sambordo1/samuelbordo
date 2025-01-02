@@ -1,4 +1,65 @@
-<h2>Blue Green Deployment with Cloud Infrastructure</h2>
-<p>
-  More info coming soon
-</p>
+<header class="project-header">
+  <LinkTo @route="index" class="home-icon">
+    <i class="fas fa-home"></i>
+  </LinkTo>
+  
+  <h1>Blue Green Deployment with Cloud Infrastructure</h1>
+</header>
+
+<section class="project-section">
+  <h2>Overview</h2>
+  <p>
+    <h3>Blue-green deployment</h3>
+    Blue-green deployment is a release management strategy that involves creating two identical environments, 
+    one running the current version of an application (blue) and the other running the new version (green), 
+    and then shifting traffic between the two environments. The Blue environment serves production traffic while the green environment is available for testing. 
+    Once tested, the green environment can be promoted to become the new production environment. The two environments can share resources, such as databases and services, to keep data in sync.
+    <br>
+    <h3>Project Details</h3>
+      <h4> Our Current Infrastructure:</h4>
+      <img src="/oldinfra.png" alt="Blue Green Deployment">
+      <p>
+        We had an apache reverse proxy web server and a nodeJS express app server running on separate EC2 instances for production and staging environments.
+        To deploy, we would manually ssh into the production EC2 box and run the commands to update the code and restart the server.
+        This made it impossible to deploy code during work hours due to active user sessions being disrupted.
+        We wanted a way to deploy code to production with zero downtime.
+      </p>
+
+      <h4> My Proposed Infrastructure:</h4>
+      <img src="/newinfra.png" alt="Blue Green Deployment">
+      <p>
+        I proposed a cloud-based load balancing solution that would allow us to deploy code to production with zero downtime.
+        The application load balancer (ALB) would use target groups to direct all traffic to the production (blue) or staging (green) EC2 instances.
+        When we were ready to promote our staging environment to production, we would simply switch all traffic over to the green target.
+        I recreated the whole architecture from scratch using CloudFormation so that the deployment engineer could simply run a command to swap the environments
+        and deploy both web and app server updated code with no downtime for the users.
+
+      </p>
+  </p>
+</section>
+
+<section class="project-section">
+  <h2>Technology &amp; Tools</h2>
+  <ul>
+    <li>
+      <strong>Cloud Network Design</strong>
+        <li>VPC, subnets, Security Groups, Route Tables, Elastic IPs, Peering Connections</li>
+    </li>
+    <li>
+      <strong>Frontend Web Hosting</strong>
+        <li>EC2, Route 53, CloudFront, S3, ACM Certificates, emberJS, Javascript</li>
+    </li>
+    <li>
+      <strong>Backend API Hosting</strong>
+        <li> EC2, reverse proxy architecture, nodeJS, express</li>
+    </li>
+    <li>
+      <strong>Load Balancing</strong>
+        <li>ALB, ELB, Listeners, Target groups</li>
+    </li>
+    <li>
+      <strong>Infrastructure as Code</strong>
+        <li>Terraform, CloudFormation</li>
+    </li>
+  </ul>
+</section>

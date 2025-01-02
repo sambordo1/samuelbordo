@@ -329,3 +329,99 @@ CONTACT SECTION
 .icon-circle:hover {
   background-color: #555;
 }
+
+/* 
+---------------------
+Individual Projects
+--------------------- 
+*/
+/* ===== PROJECT PAGE STYLES ===== */
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  /* Dark green to lighter green gradient */
+  background: linear-gradient(135deg, #0b2805 0%, #4ea646 100%);
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.home-icon {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #fff; /* White icon color on dark header */
+  transition: color 0.2s ease;
+}
+
+.home-icon:hover {
+  color: #f2f2f2;
+}
+
+/* Project Title in the header */
+.project-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #fff; /* White text against the gradient */
+}
+
+/* Section area with a light pastel background */
+.project-section {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f2faef; /* subtle pale green/gray for contrast */
+  border: 1px solid #e2e2e2; /* optional subtle border */
+  border-radius: 8px;        /* slight rounding of corners */
+  margin-bottom: 2rem;       /* spacing between sections */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* small shadow for depth */
+}
+
+/* Section headings with a deeper green accent */
+.project-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #0b2805;  /* brand dark green */
+  border-bottom: 2px solid #0b2805;
+  padding-bottom: 0.3rem;
+  /* This small underline + accent color makes headings stand out */
+}
+
+/* Paragraphs and lists within the sections */
+.project-section p,
+.project-section ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.project-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+/* Just a bit more emphasis on list items */
+.project-section li {
+  margin-bottom: 0.5rem;
+}
+
+.project-section img {
+  width: 70%;
+  height: auto; /* or auto */
+  object-fit: cover; /* maintain aspect ratio, cropping edges if needed */
+  display: block; /* remove inline spacing below img */
+  border : 1px solid #ccc;
+  margin:auto;
+}
+
+.project-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center; 
+}
+
+.project-section li {
+  margin-bottom: 0.5rem;
+}
