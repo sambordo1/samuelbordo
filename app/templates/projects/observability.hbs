@@ -9,21 +9,106 @@
 <section class="project-section">
   <h2>Overview</h2>
   <p>
-    Coming soon
+    <h3>Overview of Observability Projects</h3>
+    <p>
+      I’ve worked on creating multiple observability solutions to tackle different challenges we faced with system reliability and incident response. From monitoring and logging to alerting, I’ve designed tools and workflows that make it easier to detect and fix issues quickly.
+    </p>
+    <br>
+    <img src="/ollystack.png" alt="olly">
+    <br>
+    <h3>Open Source Observability Stack</h3>
+    <p>
+    I designed and implemented a low-cost, open-source observability stack to enhance system monitoring and troubleshooting. The solution combines Fluent Bit for lightweight log collection and processing, Postgres for robust data storage and querying, and Grafana for real-time visualizations and alerts. This stack provided a scalable and efficient framework for improving system observability while meeting cost and ease-of-implementation requirements.
+    </p>
+
+    <h3>Cloud-Based Notifier</h3>
+    <p>
+      I developed a cloud-based notification system to address the challenge of identifying and responding to critical service downtime. By integrating monitoring, logging, and alerting, the system ensured that any inactive services were promptly detected, and detailed notifications were sent to the team. This solution enahnced operational awareness and accelerated issue resolution, reducing the impact of downtime on system reliability and performance.
+    </p>
+
+    <h3>SystemD Downtime Notifier</h3>
+    <p>
+      I created a lightweight notification system to solve the problem of delayed response to service failures. Leveraging systemd's capabilities and a Rust-based utility, the solution provides real-time alerts directly to a Mattermost chat, ensuring that teams are immediately informed of issues. This minimized downtime and streamlined the process of identifying and addressing failed services.
+    </p>
   </p>
 </section>
-
 <section class="project-section">
-  <h2>Technology &amp; Tools</h2>
-  <ul>
-    <li>Coming Soon</li>
-    <li>Coming Soon</li>
-  </ul>
-</section>
+  <h2>Project Summary</h2>
 
-<section class="project-section">
-  <h2>Technical Details</h2>
-  <p>
-    Coming soon
-  </p>
+    <h3>Open Source Observability Proposal</h3>
+    <ul class="summary-list-2">
+      <li>
+        <strong>Fluent Bit</strong>
+        <li>
+          Fluent Bit is a lightweight and high-performance log processor and forwarder. It collects and processes logs from various sources and forwards them to destinations like databases or monitoring tools, all while consuming minimal system resources.
+        </li>
+      </li>
+      <li>
+        <strong>Postgres</strong>
+        <li>
+          Postgres, or PostgreSQL, is a powerful open-source relational database system. It stores and manages structured data—including logs and metrics—and offers robust querying capabilities and support for complex data types.
+        </li>
+      </li>
+      <li>
+        <strong>Grafana</strong>
+        <li>
+          Grafana is an open-source analytics and visualization platform. It connects to various data sources, like Postgres, to create interactive dashboards and alerts, enabling real-time monitoring and visualization of system metrics and logs.
+        </li>
+      </li>
+    </ul>
+
+    <p>
+      Together, Fluent Bit collects logs from applications and systems, processes them, and sends them to Postgres for efficient storage and management. Grafana then connects to Postgres to query and visualize the stored log data, providing real-time insights through customizable dashboards and alerts. This integrated stack forms a scalable and efficient open-source observability solution that enhances system monitoring and troubleshooting capabilities.
+    </p>
+    <hr class="green-divider">
+    <h3>Cloud-Based Notifier</h3>
+    <ul class="summary-list-2">
+      <li>
+        <strong>SystemD</strong>
+        <li>
+          SystemD manages the status of services, with a monitoring service checking every 2 minutes to detect if any service transitions from active to inactive, triggering the observability workflow.
+        </li>
+      </li>
+      <li>
+        <strong>CloudWatch/CloudWatch Agent</strong>
+        <li>
+          The CloudWatch Agent collects logs from the monitoring service and sends them to a specified log group and stream. CloudWatch Alarms monitor these logs and trigger alerts when an inactive service is detected.
+        </li>
+      </li>
+      <li>
+        <strong>Lambda</strong>
+        <li>
+          A Lambda function is activated by the CloudWatch Alarm and processes the alert, preparing a detailed notification with a link to the logs for further analysis.
+        </li>
+      </li>
+      <li>
+        <strong>Mattermost</strong>
+        <li>
+          The Lambda function sends a notification to a Mattermost channel, informing the team about the inactive service and providing direct access to the relevant logs for rapid troubleshooting.
+        </li>
+      </li>
+    </ul>
+    <hr class="green-divider">
+    <h3>SystemD Downtime Notifier</h3>
+    <ul class="summary-list-2">
+      <li>
+        <strong>SystemD</strong>
+        <li>
+          SystemD monitors service statuses and uses the `OnFailure` directive to trigger a fallback service (miffy) when a service fails, initiating the downtime notification workflow.
+        </li>
+      </li>
+      <li>
+        <strong>Rust Executable</strong>
+        <li>
+          The miffy service runs a Rust-based utility that processes the name of the failed service and prepares a notification to be sent to the team.
+        </li>
+      </li>
+      <li>
+        <strong>Mattermost</strong>
+        <li>
+          The Rust utility sends an immediate notification to a Mattermost channel, alerting the team about the failed service for quick response and resolution.
+        </li>
+      </li>
+    </ul>
+
 </section>

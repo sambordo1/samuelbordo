@@ -432,6 +432,12 @@ Individual Projects
   margin: 1rem 0; /* Add spacing above and below the list */
   text-align: left; /* Ensure the text and bullets are left-aligned */
 }
+.project-section .summary-list-2 {
+  list-style-type: none; /* Use standard disc bullets */
+  padding-left: 2rem; /* Add padding to align bullets correctly */
+  margin: 1rem 0; /* Add spacing above and below the list */
+  text-align: left; /* Ensure the text and bullets are left-aligned */
+}
 
 .project-section .summary-list li {
   margin-bottom: 0.5rem; /* Add spacing between list items */
