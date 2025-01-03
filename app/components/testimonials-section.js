@@ -8,12 +8,12 @@ export default Component.extend({
       imageUrl: 'dan.png',
       link: 'https://www.linkedin.com/in/samuel-bordo-825688174/details/recommendations/',
     },
-    {
-      name: 'Anthony Lukasavage',
-      text: 'Coming soon',
-      imageUrl: 'tony.png',
-      link: 'https://www.linkedin.com/in/samuel-bordo-825688174/details/recommendations/',
-    },
+    // {
+    //   name: 'Anthony Lukasavage',
+    //   text: 'Coming soon',
+    //   imageUrl: 'tony.png',
+    //   link: 'https://www.linkedin.com/in/samuel-bordo-825688174/details/recommendations/',
+    // },
     // Add as many testimonials as you like
   ]),
 });
