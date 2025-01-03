@@ -425,3 +425,16 @@ Individual Projects
 .project-section li {
   margin-bottom: 0.5rem;
 }
+
+.project-section .summary-list {
+  list-style-type: disc; /* Use standard disc bullets */
+  padding-left: 2rem; /* Add padding to align bullets correctly */
+  margin: 1rem 0; /* Add spacing above and below the list */
+  text-align: left; /* Ensure the text and bullets are left-aligned */
+}
+
+.project-section .summary-list li {
+  margin-bottom: 0.5rem; /* Add spacing between list items */
+  color: #333; /* Standard text color */
+}
+
