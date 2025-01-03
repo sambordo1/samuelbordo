@@ -1,0 +1,23 @@
+<h3>Try the API</h3>
+<p>
+  The API I created using the above technology simply returns a quote for a given author. <br>
+  Enter one of the following author's name (Twain, Shakespeare, Austen, Dickens):
+</p>
+{{!-- template-lint-disable require-input-label --}}
+<input 
+  type="text" 
+  {{on "input" this.updateAuthorName}} 
+  placeholder="Author Name" 
+  class="api-input"
+/>
+<button 
+  type="button" 
+  {{on "click" this.callApi}} 
+  class="api-button">
+  Call API
+</button>
+
+<p>
+  <strong>Response:</strong> 
+  <span class="api-response">{{this.apiResponse}}</span>
+</p>
