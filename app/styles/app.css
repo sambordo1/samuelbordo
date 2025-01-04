@@ -218,22 +218,38 @@ RECENT WORK SECTION
     grid-template-columns: 1fr;
   }
 }
-
 .project-card {
-  background-color: #fff;
-  position: relative;
+  position: relative; /* So the absolutely positioned title anchors to this card */
   overflow: hidden;
   cursor: pointer;
   border-radius: 4px;
-  text-align: center; /* optional, or do your own layout */
+  background-color: #fff;
 }
 
-/* Make the screenshot scale nicely */
 .project-img {
   width: 100%;
-  height: 300px; /* or auto */
-  object-fit: cover; /* maintain aspect ratio, cropping edges if needed */
-  display: block; /* remove inline spacing below img */
+  height: 300px;   
+  object-fit: cover;
+  display: block;
+}
+
+/* The title container at the bottom */
+.title-container {
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  background-color: #777;
+  /* Spacing inside so text doesn’t touch the edges */
+  padding: 0.5rem 1rem; 
+  text-align: center;  /* Center text horizontally */
+}
+
+.title-container h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 /* If you still want the overlay effect on hover: */
@@ -443,4 +459,3 @@ Individual Projects
   margin-bottom: 0.5rem; /* Add spacing between list items */
   color: #333; /* Standard text color */
 }
-
