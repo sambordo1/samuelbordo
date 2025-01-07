@@ -219,39 +219,46 @@ RECENT WORK SECTION
   }
 }
 .project-card {
-  position: relative; /* So the absolutely positioned title anchors to this card */
-  overflow: hidden;
+  position: relative; 
+  /* If you keep overflow: hidden and have multiple lines of text,
+     the container might get clipped if it exceeds the card's size.
+     Consider removing overflow: hidden or keeping the text short. */
+  overflow: hidden; 
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 16px;
   background-color: #fff;
+  border: 5px solid black;
 }
 
+/* The image still fills the card height. If you don't need a fixed height, remove it. */
 .project-img {
   width: 100%;
-  height: 300px;   
+  height: 300px;
   object-fit: cover;
   display: block;
 }
 
-/* The title container at the bottom */
+/* Title container absolutely centered in the card */
 .title-container {
   position: absolute;
-  bottom: 0; 
-  left: 0;
-  width: 100%;
-  background-color: #777;
-  /* Spacing inside so text doesn’t touch the edges */
-  padding: 0.5rem 1rem; 
-  text-align: center;  /* Center text horizontally */
+  top: 50%;       /* halfway down */
+  left: 50%;      /* halfway across */
+  transform: translate(-50%, -50%); /* pull it back so it’s centered perfectly */
+
+  background-color: #fff;    /* white background */
+  color: #000;               /* black text for contrast */
+  padding: 0.5rem 1rem;      /* spacing around the title */
+  border-radius: 10px;        /* optional rounding */
+  text-align: center;        /* center text horizontally */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* subtle shadow, optional */
+  border: 5px solid black; /* optional subtle border */
 }
 
 .title-container h3 {
   margin: 0;
-  color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.2rem; 
   font-weight: 600;
 }
-
 /* If you still want the overlay effect on hover: */
 .project-overlay {
   opacity: 0;
